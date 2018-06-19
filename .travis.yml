@@ -1,0 +1,17 @@
+language: ruby
+cache:
+  bundler: true
+  directories:
+    - /home/travis/.rvm
+rvm:
+- 2.4.3
+addons:
+  postgresql: '9.6'
+  apt:
+    packages:
+    - postgresql-9.6-postgis-2.3
+bundler_args: "--without production development"
+branches:
+  only:
+  - master
+sudo: false
