@@ -6,9 +6,9 @@ cache:
   directories:
     - /home/travis/.rvm
 env:
-  global: RUBY_VERSION=2.4.3
+  global: MY_RUBY_VERSION=2.4.3
 before_install:
-  - rvm use $RUBY_VERSION --install --binary --fuzzy
+  - rvm use $MY_RUBY_VERSION --install --binary --fuzzy
 addons:
   postgresql: '9.6'
   apt:
