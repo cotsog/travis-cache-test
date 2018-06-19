@@ -1,10 +1,14 @@
 language: ruby
+
+before_cache: pushd ~/.rvm && rm -rf archives rubies/ruby-2.2.7 rubies/ruby-2.3.4
 cache:
   bundler: true
   directories:
     - /home/travis/.rvm
-rvm:
-- 2.4.3
+env:
+  global: RUBY_VERSION=2.4.3
+before_install:
+  - rvm use $RUBY_VERSION --install --binary --fuzzy
 addons:
   postgresql: '9.6'
   apt:
